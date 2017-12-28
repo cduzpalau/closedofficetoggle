@@ -9,10 +9,19 @@ var args = parseArguments();
 
 //1. Create a web Server
 const http = require('http');
+var favicon = require('serve-favicon')
+var path = require('path')
 
-const server = http.createServer((request, response) => {
-  router.home(request, response);
-  router.office(request, response);
+var _favicon = favicon(path.join(__dirname, '', 'favicon.ico'))
+
+
+const server = http.createServer((req, res) => {
+  _favicon(req, res, function onNext (err) {
+    if (err) return done(err)
+  
+  router.home(req, res);
+  router.office(req, res);
+  });
 });
 
 server.listen(args.port, () => {

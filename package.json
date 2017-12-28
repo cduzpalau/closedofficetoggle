@@ -5,7 +5,8 @@
   "main": "src/app.js",
   "dependencies": {
     "argparse": "^1.0.9",
-    "formidable": "^1.1.1"
+    "formidable": "^1.1.1",
+    "serve-favicon": "^2.4.5"
   },
   "devDependencies": {},
   "scripts": {
