@@ -58,3 +58,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# executables
+closedoffice*
+
+# office file
+office
