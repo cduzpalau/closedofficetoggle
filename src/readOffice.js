@@ -6,7 +6,7 @@ function readOffice(callback) {
   //tools needed
   var fs = require('fs');
   
-  fs.readFile('./src/office','utf8',function(err,data){
+  fs.readFile('office','utf8',function(err,data){
     if (err) return callback(err);
     return callback(null,data);
   });
@@ -16,7 +16,7 @@ function writeOffice(office,callback) {
   //tools needed
   var fs = require('fs');
   
-  fs.writeFile('./src/office',office,'utf8',function(err,data){
+  fs.writeFile('office',office,'utf8',function(err,data){
     if (err) return callback(err);
   console.log("file updated with:" + office)
   });

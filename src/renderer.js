@@ -1,4 +1,5 @@
 var fs = require("fs");
+var path = require('path');
 
 function mergeValues(values, content) {
   //Cycle over the keys
@@ -12,7 +13,7 @@ function mergeValues(values, content) {
 
 function view(templateName, values, reponse) {
   //Read from the template file
-  var fileContents = fs.readFileSync('./views/' + templateName + '.html', {encoding: "utf8"});
+  var fileContents = fs.readFileSync(path.join(__dirname, '../views',templateName + '.html'), {encoding: "utf8"});
   //Insert values in to the content
   fileContents = mergeValues(values, fileContents);
   //Write out the contents to the response

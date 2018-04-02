@@ -11,9 +11,14 @@ var args = parseArguments();
 const http = require('http');
 var favicon = require('serve-favicon')
 var path = require('path')
+var fs = require('fs');
 
-var _favicon = favicon(path.join(__dirname, '', 'favicon.ico'))
+var _favicon = favicon(path.join(__dirname, '../views', 'favicon.ico'))
 
+//Check if file is there, if not create it
+if (!fs.existsSync('office')) {
+  fs.writeFileSync('office','0','utf8');
+}
 
 const server = http.createServer((req, res) => {
   _favicon(req, res, function onNext (err) {
